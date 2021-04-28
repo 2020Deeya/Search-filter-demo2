@@ -1,0 +1,29 @@
+<div class="form-group row"> </div>
+<div class="form-group row"> 
+<label for="search" class="col-sm-2 col-form-label" style="text-align: right;">Search</label>
+<div class="col-sm-6"> 
+    <input type="text" [(ngModel)]="searchValue" class="form-control" id="search" placeholder="Search Employee by Id or name or Location"/>
+</div>
+
+<!--Table starts-->
+<br/> &nbsp;
+<table class="table">
+    
+<thead class="thead-dark">
+    <tr>
+        <th scope="col-sm-4">Emp ID</th>
+        <th scope="col">Emp Name</th>
+        <th scope="col">Emp Location</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let employee of Employees | searchfilter:searchValue">
+        <td scope="col">{{employee.empId}}</td>
+        <td scope="col">{{employee.empName}}</td>
+        <td scope="col">{{employee.empLocation}}</td>
+
+    </tr>
+</tbody>
+</table>
+
+</div>
